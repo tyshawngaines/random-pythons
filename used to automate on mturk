@@ -1,0 +1,555 @@
+'''a = pyautogui.locateOnScreen('c://Users//tgaines//Desktop//python images//mturkyourquestion.PNG')
+'''
+
+
+
+
+import re,random,pyautogui
+
+why = 0
+who = 0
+what = 0
+where = 0
+
+total = why+who+what+where
+
+
+while True:
+    while total<5:
+
+
+
+
+
+        
+        profession =['Dentist',
+        'Registered Nurse',
+        'Pharmacist',
+        'Computer Systems Analyst',
+        'Physician'	,
+        'Database Administrator'	,
+        'Software Developer'	,
+        'Physical Therapist'	,
+        'Web Developer'	,
+        'Dental Hygienist'	,
+        'Occupational Therapist'	,
+        'Veterinarian'	,
+        'Computer Programmer'	,
+        'School Psychologist'	,
+        'Physical Therapist Assistant'	,
+        'Interpreter & Translator'	,
+        'Mechanical Engineer'	,
+        'Veterinary Technologist',
+        'Epidemiologist',
+        'IT Manager'	,
+        'Market Research Analyst'	,
+        'Diagnostic Medical Sonographer'	,
+        'Computer Systems Administrator'	,
+        'Respiratory Therapist'	,
+        'Medical Secretary'	,
+        'Civil Engineer'	,
+        'Substance Abuse Counselor',	
+        'Speech-Language Pathologist'	,
+        'Landscaper & Groundskeeper'	,
+        'Radiologic Technologist',
+        'Cost Estimator'	,
+        'Financial Advisor'	,
+        'Marriage & Family Therapist',	
+        'Medical Assistant'	,
+        'Lawyer'	,
+        'Accountant'	,
+        'Compliance Officer'	,
+        'High School Teacher'	,
+        'Clinical Laboratory Technician'	,
+        'Maintenance & Repair Worker'	,
+        'Bookkeeping, Accounting, & Audit Clerk'	,
+        'Financial Manager'	,
+        'Recreation & Fitness Worker'	,
+        'Insurance Agent'	,
+        'Elementary School Teacher'	,
+        'Dental Assistant'	,
+        'Management Analyst'	,
+        'Home Health Aide'	,
+        'Pharmacy Technician'	,
+        'Construction Manager'	,
+        'Public Relations Specialist',	
+        'Middle School Teacher'	,
+        'Massage Therapist',
+        'Paramedic'	,
+        'Preschool Teacher',	
+        'Hairdresser'	,
+        'Marketing Manager',	
+        'Patrol Officer'	,
+        'School Counselor',
+        'Executive Assistant',
+        'Financial Analyst',
+        'Personal Care Aide'	,
+        'Clinical Social Worker',
+        'Business Operations Manager',	
+        'Loan Officer'	,
+        'Meeting, Convention & Event Planner'	,
+        'Mental Health Counselor',	
+        'Nursing Aide'	,
+        'Sales Representative',	
+        'Architect'	,
+        'Sales Manager'	,
+        'HR Specialist'	,
+        'Plumber'	,
+        'Real Estate Agent',	
+        'Glazier',
+        'Art Director'	,
+        'Customer Service Representative',
+        'Logistician',	
+        'Auto Mechanic',
+        'Bus Driver',
+        'Restaurant Cook'	,
+        'Child & Family Social Worker',	
+        'Administrative Assistant',
+        'Paralegal'	,
+        'Cement Mason & Concrete Finisher',	
+        'Painter'	,
+        'Sports Coach'	,
+        'Teacher Assistant'	,
+        'Brickmason & Blockmason',	
+        'Cashier'	,
+        'Janitor'	,
+        'Electrician'	,
+        'Delivery Truck Driver',
+        'Maid & Housekeeper',	
+        'Carpenter'	,
+        'Security Guard',	
+        'Construction Worker',	
+        'Fabricator',	
+        'Telemarketer'
+        ]
+
+        a ='''
+        1    James    4,815,847    Mary    3,455,228
+        2    John    4,636,242    Patricia    1,565,291
+        3    Robert    4,600,785    Jennifer    1,464,890
+        4    Michael    4,307,070    Elizabeth    1,449,478
+        5    William    3,689,740    Linda    1,447,946
+        6    David    3,553,094    Barbara    1,413,261
+        7    Richard    2,496,587    Susan    1,106,614
+        8    Joseph    2,398,378    Jessica    1,042,177
+        9    Thomas    2,179,445    Margaret    1,016,433
+        10    Charles    2,161,838    Sarah    997,223
+        11    Christopher    2,010,788    Karen    984,334
+        12    Daniel    1,866,234    Nancy    976,066
+        13    Matthew    1,571,799    Betty    964,130
+        14    Anthony    1,394,023    Lisa    964,099
+        15    Donald    1,375,006    Dorothy    938,467
+        16    Mark    1,342,682    Sandra    872,927
+        17    Paul    1,316,094    Ashley    840,595
+        18    Steven    1,276,216    Kimberly    833,129
+        19    Andrew    1,241,121    Donna    825,431
+        20    Kenneth    1,241,110    Carol    810,032
+        21    George    1,225,477    Michelle    807,515
+        22    Joshua    1,192,510    Emily    806,210
+        23    Kevin    1,162,743    Amanda    771,396
+        24    Brian    1,161,909    Helen    754,741
+        25    Edward    1,146,548    Melissa    750,021
+        26    Ronald    1,073,427    Deborah    739,055
+        27    Timothy    1,063,014    Stephanie    736,098
+        28    Jason    1,023,728    Laura    729,905
+        29    Jeffrey    972,144    Rebecca    729,158
+        30    Ryan    916,701    Sharon    720,788
+        31    Gary    898,893    Cynthia    705,176
+        32    Jacob    892,543    Kathleen    696,019
+        33    Nicholas    881,085    Amy    677,725
+        34    Eric    870,654    Shirley    675,723
+        35    Stephen    841,664    Anna    661,870
+        36    Jonathan    826,440    Angela    656,616
+        37    Larry    802,374    Ruth    633,144
+        38    Justin    769,098    Brenda    605,962
+        39    Scott    768,539    Pamela    592,689
+        40    Frank    753,168    Nicole    583,727
+        41    Brandon    749,649    Katherine    581,835
+        42    Raymond    709,374    Virginia    576,419
+        43    Gregory    705,003    Catherine    571,890
+        44    Benjamin    696,992    Christine    568,352
+        45    Samuel    693,954    Samantha    564,316
+        46    Patrick    659,877    Debra    548,265
+        47    Alexander    635,536    Janet    546,524
+        48    Jack    634,008    Rachel    545,838
+        49    Dennis    611,555    Carolyn    545,185
+        50    Jerry    604,063    Emma    529,564
+        51    Tyler    579,411    Maria    525,054
+        52    Aaron    562,595    Heather    524,166
+        53    Henry    554,003    Diane    515,501
+        54    Douglas    551,890    Julie    505,291
+        55    Jose    549,130    Joyce    503,216
+        56    Peter    545,690    Evelyn    474,000
+        57    Adam    539,247    Frances    472,830
+        58    Zachary    527,344    Joan    472,764
+        59    Nathan    526,730    Christina    469,943
+        60    Walter    511,381    Kelly    469,887
+        61    Harold    483,142    Victoria    465,386
+        62    Kyle    475,524    Lauren    464,370
+        63    Carl    450,868    Martha    458,322
+        64    Arthur    439,275    Judith    449,801
+        65    Gerald    435,320    Cheryl    436,876
+        66    Roger    432,480    Megan    435,470
+        67    Keith    431,847    Andrea    428,133
+        68    Jeremy    431,740    Ann    427,855
+        69    Terry    421,381    Alice    427,303
+        70    Lawrence    421,149    Jean    426,208
+        71    Sean    414,781    Doris    421,334
+        72    Christian    405,908    Jacqueline    418,546
+        73    Albert    403,891    Kathryn    415,843
+        74    Joe    403,754    Hannah    410,830
+        75    Ethan    399,554    Olivia    410,090
+        76    Austin    398,792    Gloria    408,902
+        77    Jesse    389,149    Marie    408,571
+        78    Willie    386,441    Teresa    405,545
+        79    Billy    380,687    Sara    402,845
+        80    Bryan    376,863    Janice    401,746
+        81    Bruce    376,688    Julia    389,550
+        82    Jordan    363,879    Grace    381,487
+        83    Ralph    361,695    Judy    378,452
+        84    Roy    354,239    Theresa    377,210
+        85    Noah    353,487    Rose    372,754
+        86    Dylan    351,480    Beverly    372,619
+        87    Eugene    345,853    Denise    371,020
+        88    Wayne    343,786    Marilyn    369,081
+        89    Alan    342,690    Amber    367,827
+        90    Juan    338,106    Madison    365,619
+        '''
+
+        whoperson=re.findall(r"[a-zA-Z]+",a)
+
+
+
+
+
+
+
+
+
+
+
+        a=['who','where','what','why']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        if random.choice(a)=='why':
+            if why<2:
+                
+                print('why question...\n')
+                name =input('who is in the scene?\n').title()
+                name2 =input('who else is in the scene with'+name+'?\n').title()
+                gender =input('whats'+name+' gender example: he\she?\n')
+                action1=input('action1:\nexample: get mad,get happy,get sad, seem happy-sad-mad-angry-annoyed-angery, appear sad\nlooking mad-happy-sad-bugged\n')
+                action2=input('''action2: has already been ...
+    went outside,headed to the bar, sat on the stool,
+    ate the candy,drank the juice,
+    took a shit,pooped on her\n''')
+
+
+                whylist=['Why was '+name+' '+action1+' before '+gender+' '+action2+'?',
+                             'Why was '+name+' '+action1+' before '+gender+' '+action2+'?',
+                             'Why was '+name+' '+action1+' after '+gender+' '+action2+'?',
+                             'Why was '+name+' '+action1+' after '+gender+' '+action2+'?',
+                             'Why was '+name+' '+action1+' when '+gender+' '+action2+'?',
+                             'Why was '+name+' '+action1+' when '+gender+' '+action2+'?',
+                             
+                             'Why was '+name+' '+action1+' before '+name2+' '+action2+'?',
+                             'Why was '+name+' '+action1+' after '+name2+' '+action2+'?',
+                             'Why was '+name+' '+action1+' after '+name2+' '+action2+'?',
+                             'Why was '+name+' '+action1+' when '+name2+' '+action2+'?',
+                             'Why was '+name+' '+action1+' when '+name2+' '+action2+'?',]
+
+                whyrandom=['Because '+name+' was ',
+                           gender+' was ' ,
+                           'because '+gender+' is ',
+                           gender+' never ',
+                           name+' had ',
+                           gender+' did ',
+                           gender+' did not ',
+                           'Because '+name+' was ',
+                           gender+' seen ' ,
+                           'because '+gender+' is ',
+                           gender+' told ',
+                           name+' had ',
+                           gender+' saw ',
+                           gender+' knew ',
+                           'Because '+name+' was ',
+                           gender+' felt ' ,
+                           'because '+gender+' is ',
+                           gender+' choose ',
+                           name+' delt ',
+                           gender+' will ',
+                           gender+' cant ',
+                    ]
+
+                
+                mylist=[]
+                mylist.append(random.choice(whylist))
+                print(mylist[0],' is a option of choice...')
+                like=input('like question?')
+
+                if like=='y' or like =='Y':
+                    try:
+                        print(str(total)+' '+mylist[0]+' ,has been added')
+                        a=pyautogui.locateOnScreen('c://users//tgaines//desktop//python images//mturkyourquestion.PNG')
+                        b,c=pyautogui.center(a)
+                        pyautogui.click(b,c)
+                    
+                        pyautogui.typewrite(mylist[0])
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whyrandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whyrandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whyrandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whyrandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whyrandom))
+
+                        why+=1
+                        total+= 1
+                    except:TypeError
+
+                else:
+                    mylist=[]
+        elif random.choice(a)=='who':
+            if who<2:
+                print('who question.....\n')
+                mylist=[]
+                name =input('who is in the scene?\n').title()
+                name2 =input('who else is in the scene with'+name+'?\n').title()
+                gender =input('whats'+name+' gender example: he\she?\n')
+                action2=input('''action2: has already been ...
+    went outside,headed to the bar, sat on the stool,
+    ate the candy,drank the juice,
+    took a shit,pooped on her\n''')
+
+                wholist =['Who did '+name+' see before '+gender+' '+action2+'?',
+                          'Who did '+name+' see after '+gender+' '+action2+'?',
+                          'Who did '+name+' see when '+gender+' '+action2+'?',
+                          
+                          'Who did '+name+' notice before '+gender+' '+action2+'?',
+                          'Who did '+name+' notice after '+gender+' '+action2+'?',
+                          'Who did '+name+' notice when '+gender+' '+action2+'?',
+                          'Who did '+name+' notice before '+gender+' '+action2+'?',
+                          'Who did '+name+' notice after '+gender+' '+action2+'?',
+                          'Who did '+name+' notice when '+gender +' '+action2+'?',
+                          
+                          'Who was '+name+' talking with before '+gender+' '+action2+'?',
+                          'Who was '+name+' talking with after '+gender+' '+action2+'?',
+                          'Who was '+name+' talking with when '+gender +' '+action2+'?',
+                          'Who was '+name+' talking to before '+gender +' '+action2+'?',
+                          'Who was '+name+' talking to after '+gender +' '+action2+'?',
+                          'Who was '+name+' talking to when '+gender +' '+action2+'?',
+
+                          'Who was '+name+' chatting to when '+name2+' '+action2+'?',
+                          'Who was '+name+' chatting with before '+name2 +' '+action2+'?',
+                          'Who was '+name+' chatting with after ' +name2+' '+action2+'?',
+                          'Who was '+name+' chatting with when '+name2 +' '+action2+'?',
+
+                          'Who was '+name+' speaking to before '+name2 +' '+action2+'?',
+                          'Who was '+name+' speaking to after '+name2 +' '+action2+'?',
+                          'Who was '+name+' speaking to when ' +name2+' '+action2+'?',
+                          'Who was '+name+' speaking with before '+name2 +' '+action2+'?',
+                          'Who was '+name+' speaking with after '+name2 +' '+action2+'?',
+                          'Who was '+name+' speaking with when '+name2 +' '+action2+'?' ,     
+                          ]
+                whotalktowho = [name+' spoke to the '+random.choice(profession),
+                random.choice(whoperson)+' was talking to '+random.choice(whoperson),
+                name+' spoke with the '+random.choice(profession),
+                random.choice(whoperson)+' talked to '+random.choice(whoperson),
+                name+' had talked to the '+random.choice(profession),
+                random.choice(whoperson)+' was speaking to '+random.choice(whoperson),
+                name+' was speaking with a'+random.choice(profession),
+                random.choice(whoperson)+' spoke to '+random.choice(whoperson),
+                name+' spoke to '+random.choice(whoperson),
+                random.choice(whoperson)+' and '+random.choice(whoperson)+' was surely talking',
+                name+' and '+random.choice(whoperson)+' was clearly talking to each other'
+                 ]
+
+                mylist.append(random.choice(wholist))
+                print(mylist[0],' is a option of choice...')
+                like=input('like question?')
+                if like=='y' or like =='Y':
+                    try:
+                        print(str(total)+' '+mylist[0]+' ,has been added')
+                        a=pyautogui.locateOnScreen('c://users//tgaines//desktop//python images//mturkyourquestion.PNG')
+                        b,c=pyautogui.center(a)
+                        pyautogui.click(b,c)
+
+                        pyautogui.typewrite(mylist[0])
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whotalktowho))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whotalktowho))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whotalktowho))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whotalktowho))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whotalktowho))
+                        
+                        who+=1
+                        total+= 1
+                    except:TypeError
+
+                else:
+                    mylist=[]
+        elif random.choice(a)=='what':
+            if what<2:
+                print('what question...\n')
+                         
+                name =input('who is in the scene?\n').title()
+                name2 =input('who else is in the scene with'+name+'?\n').title()
+                gender =input('whats'+name+' gender example: he\she?\n')
+                action2=input('''action2: has already been ...
+    went outside,headed to the bar, sat on the stool,
+    ate the candy,drank the juice,
+    took a shit,pooped on her\n''')
+
+                whatlist=[
+                          'What did '+name+ 'look at before '+name2+' '+action2+'?',
+                          'What did '+name+ ' touch before '+name2+' '+action2+'?',
+                          'What did '+name+ ' do after '+name2+' '+action2+'?',
+                          
+                          'Whats happening to '+name+ ' before '+name2+' '+action2+'?',
+                          'What was '+name+' doing after '+gender+' '+action2+'?',
+                          'What was going on with '+name+' before '+name2+' '+action2+'?',
+                          'What is '+name+ ' bothering with before '+name2+' '+action2+'?',
+                          'What is '+name+ ' messing with before '+name2+' '+action2+'?',
+                          'What was '+name+ ' looking at when'+name2+' '+action2+'?',
+                          'What happening to '+name+ ' before '+name2+' '+action2+'?',
+                          'What was '+name+' doing before '+gender+' '+action2+'?',
+                          'What is '+name+ ' holding after '+gender+' '+action2+'?',
+                          'What was happening to '+name+ ' after '+gender+' '+action2+'?',
+                          'What was '+name+' talking to when '+gender+' '+action2+'?',
+                          'What is '+name+ ' reffering when '+gender+' '+action2+'?',
+                          'What was happening to '+name+ ' when '+gender+' '+action2+'?'
+                          ]
+                mylist=[]
+                mylist.append(random.choice(whatlist))
+                print(mylist[0],' is a option of choice...')
+                like=input('like question?')
+
+                whatrandom=[
+                    name+' is ',
+                    gender+' was ',
+                    name+' was ',
+                    gender+' is',
+                    name+'s',
+                    gender+'s'
+                    ]
+
+               
+
+                
+                if like=='y' or like =='Y':
+                    try:
+                        print(str(total)+' '+mylist[0]+' ,has been added')
+                        a=pyautogui.locateOnScreen('c://users//tgaines//desktop//python images//mturkyourquestion.PNG')
+                        b,c=pyautogui.center(a)
+                        pyautogui.click(b,c)
+
+                        print(mylist[0])
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whatrandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whatrandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whatrandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whatrandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whatrandom))
+                        
+
+                        
+                        what+=1
+                        total+= 1
+                    except:TypeError
+
+                else:
+                    mylist=[]
+
+
+
+                    
+        elif random.choice(a)=='where':
+            if where<2:
+                print('where question...\n')
+                name =input('who is in the scene about?\n').title()
+                name2 =input('who else is in the scene with'+name+'?\n').title()
+                gender =input('whats'+name+' gender example: he\she?\n')
+                action2=input('''action2: has already been ...
+    went outside,headed to the bar, sat on the stool,
+    ate the candy,drank the juice,
+    took a shit,pooped on her\n''')
+                wherelist=['Where was '+name+' before '+gender+' '+action2+'?',
+                           'Where is '+name+' before '+gender+' '+action2+'?',
+                           'Where was '+name+' after '+gender+' '+action2+'?',
+                           'Where is '+name+' after '+gender+' '+action2+'?',
+                           'Where was '+name+' when '+gender+' '+action2+'?',
+                           'Where is '+name+' when '+gender+' '+action2+'?'
+                           'Where was '+name+' before '+name2+' '+action2+'?',
+                           'Where is '+name+' before '+name2+' '+action2+'?',
+                           'Where was '+name+' after '+name2+' '+action2+'?',
+                           'Where is '+name+' after '+name2+' '+action2+'?',
+                           'Where was '+name+' when '+name2+' '+action2+'?',
+                           'Where is '+name+' when '+name2+' '+action2+'?']
+
+                whererandom=[
+                    name+' is ',
+                    gender+' was ',
+                    name+' was ',
+                    gender+' is',
+                    name+'s',
+                    gender+'s'
+                    ]
+
+                mylist=[]
+                mylist.append(random.choice(wherelist))
+                print(mylist[0],' is a option of choice...')
+                like=input('like question?')
+
+
+                
+                if like=='y' or like =='Y':
+                    try:
+                        print(str(total)+' '+mylist[0]+' ,has been added')
+                        a=pyautogui.locateOnScreen('c://users//tgaines//desktop//python images//mturkyourquestion.PNG')
+                        b,c=pyautogui.center(a)
+                        pyautogui.click(b,c)
+                    
+                        pyautogui.typewrite(mylist[0])
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whererandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whererandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whererandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whererandom))
+                        pyautogui.press('tab')
+                        pyautogui.typewrite(random.choice(whererandom))
+                        where+=1
+                        total+= 1
+                    except:TypeError
+
+                else:
+                    mylist=[]
+        else:
+            pass
