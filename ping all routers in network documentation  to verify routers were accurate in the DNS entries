@@ -1,0 +1,443 @@
+import os,time,re,pyautogui
+
+
+print('Files located at: '+os.getcwd())
+pyautogui.hotkey('win')
+time.sleep(0.01)
+pyautogui.typewrite('''cmd
+''',interval=0.01)
+
+words='''0011 - Dallas
+0018 - El Paso
+0021 - Longview
+0032 - Nederland
+0033 - Oklahoma City
+0034 - Tulsa
+0037 - Corpus Christi
+0038 - Pharr
+0040 - Austin
+0044 - Odessa
+0050 - Fort Worth Dist. Center
+0051 - Amarillo
+0055 - Eagle Lake
+0056 - Fort Worth
+0059 - Houston
+0062 - Sherman
+0063 - Stafford
+0065 - Texas City
+0066 - Tyler
+0067 - Waco
+0074 - San Antonio
+0080 - Deer Park
+0081 - Texarkana
+0101 - Cleveland East
+0102 - Akron
+0103 - Canton
+0104 - Mansfield
+0105 - Cincinnati
+0106 - Columbus
+0107 - Dayton
+0108 - Youngstown
+0109 - Toledo
+0110 - Lima
+0113 - Elyria & Return Ctr
+0115 - Erie
+0116 - Reading
+0118 - New Stanton
+0119 - Pittsburgh
+0122 - Philadelphia
+0124 - York
+0125 - Charleston
+0128 - Parkersburg
+0130 - Cleveland West
+0131 - Williamsport
+0132 - South Point
+0133 - Baltimore
+0134 - Lancaster
+0135 - Bluefield
+0136 - Newark
+0137 - Middletown
+0138 - Harrisburg
+0139 - Warren
+0140 - Wilkes-Barre
+0141 - Bedford
+0142 - Springfield
+0144 - Fairmont
+0146 - Butler
+0147 - Steubenville
+0150 - Sandusky
+0152 - Kokomo
+0153 - Fort Wayne
+0154 - Allentown
+0155 - Lafayette
+0156 - Sidney
+0157 - Muncie
+0158 - Marion
+0159 - Terre Haute
+0160 - Rockford
+0163 - Salisbury
+0164 - Ebensburg
+0167 - Chambersburg
+0168 - Columbus
+0172 - Cedar Rapids (MBC)
+0175 - Garden City
+0176 - Jamesburg
+0178 - Washington
+0179 - Lexington
+0183 - Indianapolis
+0188 - Sedalia
+0189 - North Sioux City
+0194 - J R Cunin Dist. Center
+0201 - Scottsboro
+0201a - Madison
+0202 - Charleston
+0203 - Fayetteville
+0204 - Wilmington
+0206 - Jackson
+0207 - Fort Smith
+0208 - Anniston
+0209 - Tupelo
+0210 - Gainsville
+0211 - Cartersville
+0213 - Demopolis
+0214 - Pompano Beach
+0215 - Conyers
+0217 - Vansant
+0220 - Anderson
+0222 - J L Lammers Dist. Center
+0231 - Lakeland
+0235 - Murfreesboro
+0237 - Russellville
+0238 - Thomasville
+0241 - Jonesboro
+0247 - Springdale
+0248 - Atlanta
+0250 / 9671 - Shreveport
+0251 - Orlando
+0252 - Danville
+2252a - Danville Goodyear
+0254 - Florence
+0255 - Albany
+0257 - Forest
+0258 - Tampa
+0259 - Richland
+0261 - Baton Rouge
+0262 - Charlotte
+0263 - Chattanooga
+0264 - Greensboro
+0266 - Jacksonville
+0267 - Kingsport
+0268 - Knoxville
+0269 - Memphis
+0270 - Valdosta
+0271 - Little Rock
+0272 - Nashville
+0273 - New Orleans
+0274 - Norfolk
+0275 - Richmond
+0276 - Roanoke
+0277 - Greenville
+0278 - Asheville
+0279 - Augusta
+0281 - Raleigh
+0283 - Birmingham
+0284 - Mobile
+0285 - Winston-Salem
+0286 - Spartanburg
+0287 - Greenville
+0289 - 0245 Macon
+0290 - Brunswick
+0291 - Montgomery
+0292 - Columbus
+0294 - Savannah
+0297 - Norcross
+0301 - Appleton
+0302 - Milwaukee
+0303 - Wausau-South
+0306 - Kenosha
+0308 - Madison
+0309 - Minneapolis
+0311 - Valley Stream
+0314 - Iron Mountain
+0315 - Ishpeming
+0316 - Watertown
+0322 - Duluth
+0324 - BILLINGS (spencer)
+0325 - BOISE  (spencer)
+0326 - GILLETTE  (spencer)
+0327 - KENT  (spencer)
+0328 - MODESTO  (spencer)
+0330 - PORTLAND  (spencer)
+0331 - SALT LAKE  (spencer)
+0333 - YAKIMA  (spencer)
+0339 - Massena
+0340 - Vestal
+0341 - Albany
+0342 - Rochester
+0343 - Big Flats
+0344 - Buffalo
+0346 - Syracuse
+0347 - Saint Louis
+0348 - Granite City
+0349 - Columbia
+0358 - Crestwood
+0360 - Elk Grove
+0361 - Joliet
+0369 - Bradley
+0370 - Louisville
+0372 - Des Moines  (MBC)
+0377 - Fargo  (MBC) (9436)
+0385 - Walton
+0386 - Bowling Green
+0388 - Lexington
+0389 - Paducah
+0391 - St.Cloud (MBC)
+0395 - Hibbing (MBC)
+0399 - Midwest Dist. Center
+0401 - Seattle
+0402 - Tacoma
+0403 - Everett
+0404 - Longview
+0405 - Aberdeen 
+0406 - Pasco 
+0407 - Bellingham
+0408 - Portland
+0409 - Eugene
+0412 - Spokane
+0413 - Portland Dist. Center
+0414 - Millersburg
+0415 - Lewiston
+0416 - Kalispell
+0417 - Missoula
+0420 - Medford
+0422 - Billings
+0428 - Spokane Belt Shop
+0429 - Missoula Belt Shop
+0430 - Tualatin
+0431 - Yuba City
+0432 - Olympia
+0433 - Salem
+0435 - Duluth  (AHS)
+0438 - Bend
+0442 - Omaha  (AHS)
+0444 - Salina
+0448 - Miramar (San Juan)
+0455 - Salt Lake City
+0456 - Ogden
+0457 - Orem
+0467 - Grand Island
+0470 - Kansas City ABC, MO
+0471 - Topeka ABC
+0472 - St Joseph ABC
+0474 - Wichita ABC
+0475 - Batesville ABC
+0479 - Omaha
+0488 - Longview Rubber Shop
+0494 - Clackamas
+0498 - Yakima
+0603 - Manchester
+0605 - South Windsor
+0607 - Dover
+0608 - Bangor
+0610 - Davenport
+0615 - Livermore Falls
+0616 - Wilmington
+0617 - Rutland
+0620 - La Porte
+0621 - Alexandria
+0623 - Chrisney
+0628 - Hydra-Gear
+0629 - TOPS Pasadena
+0639 - Lanham
+0640 - Dees Fluid Pwr Baltimore
+0645 - Cumberland
+0651 - Frederick
+0652 - Fredericksburg
+0656 - Hagerstown
+0658 - Harrisonburg
+0664 - Evansville
+0665 - Portage
+0668 - Kulpsville
+0670 - Laurel
+0678 - Owensboro
+0682 - Gaithersburg
+0686 - Runnemede
+0690 - Winchester
+0706 - Lake Charles (Sulphur)
+0708 - Gillette
+0709 - Pine Bluff
+0710 - Columbus
+0711 - Cleveland TN
+0713 - Grenada
+0714 - Denver
+0732 - Albuquerque
+0733 - Casper
+0734 - Cheyenne
+0735 - Colorado Springs
+0736 - Craig
+0738 - Grand Junction
+0739- Greeley
+0742 - Sheboygan
+0743 - Farmington Hills
+0750 - Alpena
+0751 - Benton Harbor
+0752 - Defiance
+0753 - Findlay
+0756 - Wyoming
+0757 - Green Bay
+0758 - Holland
+0759 - Jackson
+0760 - Kalamazoo
+0763 - Norton Shores
+0765 - Port Huron
+0766 - Saginaw
+0772 - Camden
+0774 - Dequeen
+0780 - Traverse City
+0782 - Wisconsin Rapids
+0783 - Sterling Heights
+0783 - Sterling Heights
+0802 - North Hollywood
+0831 - Fontana Dist. Center
+0843 - Commerce
+0846 - El Centro
+0849 - Irwindale
+0851 - Long Beach
+0853 - Chula Vista
+0854 - San Marcos
+0855 - Santa Ana
+0857 - Santa Maria
+0859 - Ventura
+0860 - Victorville
+0862 - Bakersfield
+0862cl - Searles Valley Minerals
+0864 - Fremont
+0865 - Fresno
+0866 - Gilroy
+0868 - Merced
+0869 - Modesto
+0874 - Redding
+0875 - West Sacramento
+0876 - Salinas
+0879 - San Jose
+0882 - Stockton
+0883 - Fairfield
+0885 - Tulare
+0887 - Las Vegas
+0888 - Watsonville
+0889 - Sparks
+0895 - Phoenix
+0898 - Tucson
+0999 - cleve-test-site
+1001 - contractors
+2036 - Houston Rubber
+2171 - Liberal
+2173 - Dodge City
+2318 - Dickinson
+2357 - Williston
+2393 - Mason City
+2445 - Pocatello
+2578 - Schenectady (NAAO)
+2721 - Roanoke Rapids
+3401 - FPR Bridgeville
+9000 - Saskatoon test site
+9002 - Saskatoon AVPN
+9004 - Ira Ira
+9004 - Ira Ira
+9005 - Ira Post
+9006 - Ira Forsan
+9008 - AirDraulics Memphis
+9024 - MSS - Parma
+9024 - MSS Strongsville
+9028 - HyQuip Waukesha
+9029 - HyQuip Butler
+9030 - HyQuip Madison
+9043 - DTS Mokena
+9045 - Bay Newark
+9046 - Bay Santa Ana
+9054 - Bay Austin
+9064 - Charlotte  (CFC)
+9078 - DTS Madison Heights
+9079 - FT Lenexa
+9084 - HydroAir Wallingford
+9087 - HydroAir Cranston
+9088 - Clarence
+9089 - PS Chanhassen
+9092 - PS Ankeny
+9093 - DTS Grandville
+9094 - PS Tea
+9095 - PS Richfield
+9125 - Knox Corporate
+9273 - Atlantic Fasteners
+9441 - AHS Minneapolis
+3450 - ESI-St. Louis
+9450_S - ESI build shop
+945070 - ESI Aeroquip
+9451 - ESI-Kansas City
+9452 - ESI-Gurnee
+9635 - Reliance Houston
+9646 - Aspermont (Knox)
+9647 - Breckenridge (Knox)
+9650 - Andrews (Knox)
+9655 - Winters (Knox)
+9654 - Denver City (Knox)
+9657 - Fort Stockton (Knox)
+9661 - McCamey (Knox)
+9663 - Pecos (Knox)
+9666 - Mertzon (Knox)
+9669 - Reliance Greeley, CO
+9672 - Reliance San Antonio, TX
+9673 - Reliance Midland, TX
+9675 - Midland Pump Shop (Knox)
+9676 - Karnes City (Knox)
+9677 - Sterling City (Knox)
+9679 - Midland (Knox)
+9681 - Carlsbad (Knox)
+9688 - Orla (Knox)
+9691 - Ackerly (Knox)
+9698 - Calliham (Knox)
+9699 - San Angelo (Knox)
+9032 - SG Morris Cleveland
+9032 - SG Morris Cranbury Township
+'''
+
+
+a=re.compile(r'\d+')
+aa=a.findall(words)
+l=[]
+
+for i in range(len(aa)):
+    if int(aa[i])<100:
+        l.append((re.sub('00','0',aa[i])))
+    elif int(aa[i])>100:
+        l.append((re.sub('0','',aa[i])))
+    else:
+        pass
+for k in range(len(aa)):    
+    if int(aa[k])>=100:
+        l.append(aa[k])
+    else:
+        pass
+time.sleep(2)
+
+for m in range(len(aa)):
+    c=(l[m])
+    time.sleep(1)
+    pyautogui.typewrite('ping '+c+'rtr')
+    time.sleep(0.01)
+    pyautogui.press('enter')
+    time.sleep(10)
+    d=pyautogui.locateOnScreen('c:\\Users\\tgaines\\desktop\\python images\\nodns.png')
+    if d:
+        dx,dy = pyautogui.center(d)
+        pyautogui.click(dx,dy)
+        os.chdir('c:\\Users\\tgaines\\Desktop\\DNS entries')
+        dns=open('nodns.txt','a')
+        dns.write(str(c)+'may need its dns entry checked\n')
+        print((str(c)+'may need its dns entry checked'))
+        dns.close()
+    else:
+        pass
+    pyautogui.hotkey('ctrl','c')
+    pyautogui.typewrite('''cls
+''')
