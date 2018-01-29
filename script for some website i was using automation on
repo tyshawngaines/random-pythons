@@ -1,0 +1,211 @@
+import pyautogui,time,random
+'''
+386,30 = 1
+1064,30 = 2
+1620,30 =3
+386,490 = 4
+1064,490 = 5
+1620,490 = 6
+'''
+a=1
+
+try:
+    while True:
+        #clicks are you still watching?
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\eare you still there.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        
+        print('starting loop: times program ran so far == '+str(a))
+        #clicks are you still watching?
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\eare you still there.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #clicks inactivity
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #box 1
+        print('looping box 1')
+        for i in range(0,8):
+            pyautogui.click(300,random.randint(410,480))
+            time.sleep(random.randint(3,5))
+            pyautogui.click(386,30)
+            time.sleep(10)
+            
+        print('box 1 loop ended, beginning box 2')
+        time.sleep(3)
+
+        #clicks are you still watching?
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\eare you still there.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #clicks inactivity
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #box 2
+        print('looping box 2')
+
+        for i in range(0,9):
+            pyautogui.click(1030,random.randint(410,480))
+            time.sleep(random.randint(10,15))
+            pyautogui.click(1064,30)
+            time.sleep(10)
+
+        #clicks are you still watching?
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\eare you still there.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #clicks inactivity
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        print('box 2 loop ended, beginning box 3')
+        time.sleep(3)
+
+        #clicks are you still watching?
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\eare you still there.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #clicks inactivity
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #box 3
+        print('looping box 3')
+        for i in range(0,8):
+            pyautogui.click(1600,random.randint(410,480))
+            time.sleep(random.randint(10,15))
+            pyautogui.click(1621,30)
+            time.sleep(10)
+            
+        print('box 3 loop ended, beginning box 4')
+        time.sleep(3)
+        #-----------------------------------
+
+        #clicks are you still watching?
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\eare you still there.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #clicks inactivity
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #box 4
+        print('looping box 4')
+        for i in range(0,9):
+            pyautogui.click(386,random.randint(820,950))
+            time.sleep(random.randint(10,15))
+            pyautogui.click(387,491)
+            time.sleep(10)
+
+        #clicks are you still watching?
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\eare you still there.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #clicks inactivity
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        print('box 4 loop ended, beginning box 5')
+        time.sleep(3)
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #box 5 
+        print('looping box 5')
+        for i in range(0,8):
+            pyautogui.click(900,random.randint(820,950))
+            time.sleep(random.randint(10,15))
+            pyautogui.click(1064,490)
+            time.sleep(10)
+
+        print('box 5 loop ended, beginning box 6')
+        time.sleep(3)
+
+        #clicks are you still watching?
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\eare you still there.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #clicks inactivity
+        try:
+            b = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\yellow stop.PNG')
+            c,d = pyautogui.center(b)
+            pyautogui.click(c,d)
+        except:TypeError
+        #box 6
+        print('looping box 6')
+        for i in range(0,9):
+            pyautogui.click(1500,random.randint(820,950))
+            time.sleep(random.randint(10,15))
+            pyautogui.click(1620,490)
+            time.sleep(10)
+            print('box 6 loop ended, restarting')
+
+
+        
+        time.sleep(300)
+        pyautogui.click(300,random.randint(410,480))
+        time.sleep(3)
+        pyautogui.press('f5')
+        time.sleep(3)
+        pyautogui.click(1030,random.randint(410,480))
+        time.sleep(3)
+        pyautogui.press('f5')
+        time.sleep(3)
+        pyautogui.click(1600,random.randint(410,480))
+        time.sleep(3)
+        pyautogui.press('f5')
+        time.sleep(3)
+        pyautogui.click(386,random.randint(820,950))
+        time.sleep(3)
+        pyautogui.press('f5')
+        time.sleep(3)
+        pyautogui.click(900,random.randint(820,950))
+        time.sleep(3)
+        pyautogui.press('f5')
+        time.sleep(3)
+        pyautogui.click(1500,random.randint(820,950))
+        time.sleep(3)
+        pyautogui.press('f5')
+        time.sleep(3)
+
+        a+=1
+except:TypeError
+print('sum shit shit happened!')
