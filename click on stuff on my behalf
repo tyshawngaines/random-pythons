@@ -1,0 +1,121 @@
+''' -----------------------------------------------------------
+i worte this script to keep my screen from timing out and rotating thru tickets and alarms
+------------------------------------------------------------'''
+
+# click on browser
+
+import pyautogui,time
+i=1
+while True:
+    #aerohive login
+
+
+    print('screen flow Number '+str(i))
+    i+=1
+    #within applied
+    pyautogui.click(500,35,duration=1)
+    time.sleep(0.5)
+    pyautogui.press('f5')    
+    time.sleep(35)
+    pyautogui.moveTo(600,450,duration=0.5)
+    time.sleep(0.5)
+    #servicenow
+    print('on to service now')
+    pyautogui.click(600,35,duration=1)
+    time.sleep(0.5)
+    pyautogui.press('f5')
+    time.sleep(5)
+
+    try:
+        
+    #clicks on star
+        print('looking for unclicked - star')
+        a = pyautogui.locateOnScreen('c:\\Users\\tgaines\\desktop\\python images\\non clicked star.PNG',grayscale = True)
+        b,c = pyautogui.center(a)
+        pyautogui.click(b,c,duration=0.5)
+        time.sleep(2)
+    except:TypeError
+
+    try:
+        print('looking for pre clicked star')
+        a = pyautogui.locateOnScreen('c:\\Users\\tgaines\\desktop\\python images\\star.PNG',grayscale = True)
+        b,c = pyautogui.center(a)
+        pyautogui.click(b,c,duration=0.5)
+        time.sleep(2)
+    except:TypeError
+            #clicks on incident
+    try:
+        print('looking for incident - my groups incidents')
+        a = pyautogui.locateOnScreen('c:\\Users\\tgaines\\desktop\\python images\\icident my group.PNG',grayscale = True)
+        b,c = pyautogui.center(a)
+        pyautogui.click(b,c,duration=0.5)
+        time.sleep(2)
+    except:TypeError
+    try:
+            #clicks on update
+        print('looking for updates')
+        a = pyautogui.locateOnScreen('c:\\Users\\tgaines\\desktop\\python images\\updated 1.PNG',grayscale = True)
+        b,c = pyautogui.center(a)
+        pyautogui.click(b,c,duration=0.5)
+        d = pyautogui.position()
+        print('hummm....')
+        time.sleep(5)
+    except:TypeError
+
+    try:    
+        if  d==pyautogui.position():
+            print('same position moving to next screen')
+            pyautogui.moveTo(600,450,duration=0.5)
+        else:
+            print('waiting 100 secs, your busy')
+            time.sleep(100)
+    except:TypeError
+
+    print('moving on')
+    time.sleep(10)
+    pyautogui.moveTo(600,450,duration=0.5)
+    time.sleep(0.5)
+    #dsr
+    pyautogui.click(750,35,duration=1)
+    time.sleep(0.5)
+    pyautogui.press('f5')
+    time.sleep(15)
+    pyautogui.moveTo(600,450,duration=0.5)
+    time.sleep(0.5)
+    #aerohive
+
+    pyautogui.click(900,35,duration=1)
+    time.sleep(0.5)
+    pyautogui.press('f5')
+        #scrolls down, finds gray alarm box and clicks on alarms
+
+    try:
+        a = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\aerohive blue.PNG',grayscale = True)
+        b,c = pyautogui.center(a)
+        pyautogui.moveTo(b,c)
+        time.sleep(1)
+        pyautogui.scroll(-1000)
+        a = pyautogui.locateOnScreen('c:\\users\\tgaines\\desktop\\python images\\aerohive alarms.PNG',grayscale = True)
+        b,c = pyautogui.center(a)
+        pyautogui.click(b,c)
+        pyautogui.click(133,None)
+
+    except:TypeError
+    
+    time.sleep(100)
+    pyautogui.moveTo(600,450,duration=0.5)
+    time.sleep(0.5)
+    #riverbed
+    pyautogui.click(1000,35,duration=1)
+    time.sleep(0.5)
+    pyautogui.press('f5')
+    time.sleep(20)
+    pyautogui.moveTo(600,450,duration=0.5)
+    time.sleep(0.5)
+    #Nagios XI
+    pyautogui.click(1150,35,duration=1)
+    time.sleep(0.5)
+    pyautogui.press('f5')
+    time.sleep(35)
+    pyautogui.moveTo(600,450,duration=0.5)
+    time.sleep(0.5)
