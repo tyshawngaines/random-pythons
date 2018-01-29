@@ -1,0 +1,36 @@
+#telnet = configure switch with no eee and a description
+
+import telnetlib
+import time
+
+
+def sg220():
+    a=input('please enter ip address for cisco SG220\n')
+    if a=='192.168.0.2':      
+        print('configuring....')
+        c = telnetlib.Telnet(a,23,1)
+        switchoutput=c.read_until(b'username:',1)
+        c.write(b'admin'+b'\n')
+        time.sleep(1)
+        switchoutput=c.read_until(b'password:',1)
+        c.write(b'SuperP@ssw0rd\n')
+        time.sleep(1)
+        c.write(b'enable\n')
+        time.sleep(1)
+        c.write(b'config t\n')
+        time.sleep(1)
+        c.write(b'int ra g1-20\n')
+        time.sleep(1)
+        c.write(b'no eee enable\n')
+        time.sleep(1)
+        c.write(b'yes\n')
+        time.sleep(1)
+        c.write(b'spanning-tree portfast\n')
+        time.sleep(1)
+        c.write(b'des configured_via_python\n')
+        time.sleep(1)
+        print('switch configure\nfeel free to verify')        
+    else:
+        print('wrong ip not going to configure')
+        break    
+sg220()
