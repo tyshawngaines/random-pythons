@@ -1,0 +1,46 @@
+''' watches tv for me and i got paid while it was employed'''
+
+import pyautogui,time,random
+# x = ?? y=650
+# screen rez = 50%
+
+loop = 1
+print('beginning loop ('+(str(loop)+')'))
+
+time.sleep(10)
+
+while True:
+    print('loop ('+(str(loop)+') begin'))
+    pyautogui.click(85,745,duration=1)
+    pyautogui.click(125,650,duration=1)
+    time.sleep(random.randint(1,10))
+    pyautogui.press('f5')
+    time.sleep(random.randint(1,10))
+    print('clicked 1st screen')
+    pyautogui.click(85,745,duration=1)
+    pyautogui.click(350,650,duration=1)
+    time.sleep(random.randint(1,10))
+    pyautogui.press('f5')
+    time.sleep(random.randint(1,10))
+    print('clicked 2nd screen')
+    pyautogui.click(85,745,duration=1)
+    pyautogui.click(575,650,duration=1)
+    time.sleep(random.randint(1,10))
+    pyautogui.press('f5')
+    time.sleep(random.randint(1,10))    
+    print('clicked 3rd screen')
+    pyautogui.click(85,745,duration=1)
+    pyautogui.click(780,650,duration=1)
+    time.sleep(random.randint(1,10))
+    pyautogui.press('f5')
+    time.sleep(random.randint(1,10))
+    print('clicked 4th screen')
+    pyautogui.click(85,745,duration=1)
+    pyautogui.click(1000,650,duration=1)
+    time.sleep(random.randint(1,10))
+    pyautogui.press('f5')
+    print('clicked 5th screen')
+    print('resetting')
+    time.sleep(random.randint(200,400))
+    loop+=1
+    
